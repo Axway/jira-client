@@ -695,6 +695,19 @@ public final class Field {
                 json.put(ValueType.NAME.toString(), value.toString());
 
             return json.toString();
+            
+        } else if ((m.type.equals("option"))) {
+            JSONObject json = new JSONObject();
+
+            if (value == null)
+                return JSONNull.getInstance();
+            else if (value instanceof ValueTuple) {
+                ValueTuple tuple = (ValueTuple)value;
+                json.put(tuple.type, tuple.value.toString());
+            } else
+                json.put(ValueType.VALUE.toString(), value.toString());
+
+            return json.toString();
         } else if (m.type.equals("project") || m.type.equals("issuelink")) {
             JSONObject json = new JSONObject();
 
