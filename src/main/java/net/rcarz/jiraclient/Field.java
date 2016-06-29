@@ -20,7 +20,7 @@
 package net.rcarz.jiraclient;
 
 import java.lang.Iterable;
-import java.lang.UnsupportedOperationException;
+import java.lang.UnsupportedOperationException;  
 import java.sql.Timestamp;
 import java.text.ParsePosition;
 import java.text.SimpleDateFormat;
@@ -745,7 +745,7 @@ public final class Field {
                 throw new JiraException("Field '" + name + "' expects a Numeric value");
             }
             return value;
-        }
+        } 
 
         throw new UnsupportedOperationException(m.type + " is not a supported field type");
     }
